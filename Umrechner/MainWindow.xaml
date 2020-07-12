@@ -1,0 +1,139 @@
+﻿<Window x:Class="Umrechner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Umrechner"
+        mc:Ignorable="d"
+        Title="Umrechner" Height="300" Width="450"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <TabControl>
+            <TabItem Header="Temperatur">
+                <StackPanel
+                    Margin="10">
+                    <Label HorizontalAlignment="Center">
+                        Kelvin (K)
+                    </Label>
+                    <TextBox x:Name="TbKelvin" 
+                             Padding="2"
+                             MaxWidth="200"
+                             TextAlignment="Right"
+                             KeyUp="CalculateTemperature"/>
+                    <Label HorizontalAlignment="Center">
+                        Celsius (°C)
+                    </Label>
+                    <TextBox x:Name="TbCelsius" 
+                             Padding="2"
+                             MaxWidth="200"
+                             TextAlignment="Right"
+                             KeyUp="CalculateTemperature"/>
+                    <Label HorizontalAlignment="Center">
+                        Fahrenheit (°F)
+                    </Label>
+                    <TextBox x:Name="TbFahrenheit" 
+                             Padding="2"
+                             MaxWidth="200"
+                             TextAlignment="Right"
+                             KeyUp="CalculateTemperature"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Strecken">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" 
+                                Grid.Column="0" 
+                                Margin="5 0">
+                        <Label>Millimeter (mm)</Label>
+                        <TextBox x:Name="TbMillimeter"
+                                 Padding="2"
+                                 TextAlignment="Right"
+                                 KeyUp="CalculateDistance"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" 
+                                Grid.Column="1" 
+                                Margin="5 0">
+                        <Label>Zoll (in.)</Label>
+                        <TextBox x:Name="TbInch"
+                                 Padding="2"
+                                 TextAlignment="Right"
+                                 KeyUp="CalculateDistance"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" 
+                                Grid.Column="0" 
+                                Margin="5 0">
+                        <Label>Zentimeter (cm)</Label>
+                        <TextBox x:Name="TbCentimeter"
+                                 Padding="2"
+                                 TextAlignment="Right"
+                                 KeyUp="CalculateDistance"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" 
+                                Grid.Column="1" 
+                                Margin="5 0">
+                        <Label>Fuss (ft.)</Label>
+                        <TextBox x:Name="TbFeet"
+                                 Padding="2"
+                                 TextAlignment="Right"
+                                 KeyUp="CalculateDistance"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" 
+                                Grid.Column="0" 
+                                Margin="5 0">
+                        <Label>Meter (m)</Label>
+                        <TextBox x:Name="TbMeter"
+                                 Padding="2"
+                                 TextAlignment="Right"
+                                 KeyUp="CalculateDistance"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" 
+                                Grid.Column="1" 
+                                Margin="5 0">
+                        <Label>Yards (yd.)</Label>
+                        <TextBox x:Name="TbYard"
+                                 Padding="2"
+                                 TextAlignment="Right"
+                                 KeyUp="CalculateDistance"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" 
+                                Grid.Column="0" 
+                                Margin="5 0">
+                        <Label>Kilometer (km)</Label>
+                        <TextBox x:Name="TbKilometer"
+                                 Padding="2"
+                                 TextAlignment="Right"
+                                 KeyUp="CalculateDistance"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" 
+                                Grid.Column="1" 
+                                Margin="5 0">
+                        <Label>Meilen (mi.)</Label>
+                        <TextBox x:Name="TbMile"
+                                 Padding="2"
+                                 TextAlignment="Right"
+                                 KeyUp="CalculateDistance"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TextBlock Grid.Row="1"
+                   x:Name="TxBlMessageBlock" 
+                   Foreground="Red"
+                   FontWeight="Bold"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"/>
+    </Grid>
+</Window>
